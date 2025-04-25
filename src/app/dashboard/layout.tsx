@@ -8,7 +8,7 @@ export default function DashboardPage({
   return (
     <div className={styles.root__layout}>
       <Sidebar />
-      <main className="main container"> {children}</main>
+      <main className="main"> {children}</main>
     </div>
   );
 }

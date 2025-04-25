@@ -4,5 +4,8 @@
 .sidebar{
     grid-area: sidebar;
     background-color: #f4f4f4;
-    padding: 20px;
+    padding:0;
+    width: 250px;
+    overflow-y: hidden;
+  
 }

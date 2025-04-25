@@ -9,6 +9,8 @@
 
 .root__layout{
     min-height: 100vh;
+    background-color: #fff;
+    width: 100vw;
     display: grid;
     grid-template-columns: max-content 1fr; 
     grid-template-areas:
