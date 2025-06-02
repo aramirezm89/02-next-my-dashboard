@@ -1,0 +1,16 @@
+.sidebar{
+    grid-area: sidebar;
+    background-color: #f4f4f4;
+    padding:0;
+    width: 250px;
+    overflow-y: hidden;
+    background-color: oklch(21% .034 264.665);
+  
+}
+
+.logo__container{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}

@@ -1,4 +1,4 @@
-import Sidebar from "../components/sidebar/Sidebar";
+import Sidebar from "../../components/sidebar/Sidebar";
 import styles from "./dashboard-layout.module.css";
 export default function DashboardPage({
   children,
@@ -8,7 +8,7 @@ export default function DashboardPage({
   return (
     <div className={styles.root__layout}>
       <Sidebar />
-      <main className="main"> {children}</main>
+      <main className={styles.main + " " + styles.container}> {children}</main>
     </div>
   );
 }
