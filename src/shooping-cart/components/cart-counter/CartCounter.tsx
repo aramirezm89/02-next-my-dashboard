@@ -5,19 +5,24 @@ import styles from "./cart-counter.module.css";
 import { useAppDispatch, useAppSelector } from '@/store';
 import { useEffect } from "react";
 
-interface CartCounterProps {
+/* interface CartCounterProps {
   readonly initialCount?: number;
-}
-export default function CartCounter({ initialCount }: CartCounterProps) {
+} */
+export default function CartCounter() {
     const count = useAppSelector((state) => state.counter.count);
     const dispatch = useAppDispatch();
-    
+
+
     useEffect(() => {
 
-        if (initialCount) {
-            dispatch(setCount(initialCount));
+      if (typeof window !== "undefined") {
+        const valorGuardado = localStorage.getItem("count");
+        if (valorGuardado) {
+     
+          dispatch(setCount(Number(valorGuardado)));
         }
-    }, [initialCount, dispatch]);
+      }
+    }, []);
     
 
   
