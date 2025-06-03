@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+/* import { createSlice } from '@reduxjs/toolkit'
 
 interface PokemonState {
   pokemons: [];
@@ -29,4 +29,4 @@ const pokemonSlice = createSlice({
 
 export const {} = pokemonSlice.actions
 
-export default pokemonSlice.reducer
+export default pokemonSlice.reducer */

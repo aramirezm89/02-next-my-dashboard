@@ -6,7 +6,6 @@ import { IoCartOutline } from "react-icons/io5";
 
 export const WidgetGrid = () => {
   const count = useAppSelector((state) => state.counter.count);
-
   return (
     <div className="flex flex-wrap justify-between  gap-y-9">
       <SimpleWidget

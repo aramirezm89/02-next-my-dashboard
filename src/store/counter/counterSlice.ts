@@ -6,7 +6,7 @@ interface CounterState {
 }
 
 const initialState: CounterState = {
-  count:  JSON.parse(localStorage.getItem("count") ?? "0"), // Initialize from localStorage if available
+  count:   0, // Initialize from localStorage if available
   isReady: false
 };
 

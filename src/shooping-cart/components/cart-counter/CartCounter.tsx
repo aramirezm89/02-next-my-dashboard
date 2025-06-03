@@ -11,13 +11,15 @@ interface CartCounterProps {
 export default function CartCounter({ initialCount }: CartCounterProps) {
     const count = useAppSelector((state) => state.counter.count);
     const dispatch = useAppDispatch();
-
+    
     useEffect(() => {
+
         if (initialCount) {
             dispatch(setCount(initialCount));
         }
     }, [initialCount, dispatch]);
     
+
   
   return (
     <div className={styles.buttons}>
