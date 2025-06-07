@@ -21,7 +21,7 @@ const getPokemons = async (
 
   const pokemons = data.results.map((pokemon) => {
     const id = Number(pokemon.url.split("/").at(-2)); // Extracting the ID from the URL and converting to number
-
+    
     return {
       id,
       name: pokemon.name,
