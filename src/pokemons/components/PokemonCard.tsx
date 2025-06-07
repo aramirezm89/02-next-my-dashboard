@@ -1,9 +1,17 @@
+'use client';
+
 import Link from "next/link";
 import { SimplePokemon } from "../interfaces";
 import Image from "next/image";
 import { IoHeartOutline } from "react-icons/io5";
-
+import { useAppSelector,useAppDispatch } from "@/store";
+import { addFavourite } from "@/store/pokemon/pokemonSlice";
 export const PokemonCard = ({ pokemon }: { pokemon: SimplePokemon }) => {
+  const isFavorite = useAppSelector((state) => !!state.pokemons.favorites[pokemon.id]);
+  const dispatch = useAppDispatch();
+
+
+
   return (
     <div className="bg-white rounded overflow-hidden shadow-lg w-[250px] ">
       <div className="text-center p-6 bg-gray-800 border-b">
@@ -38,19 +46,19 @@ export const PokemonCard = ({ pokemon }: { pokemon: SimplePokemon }) => {
         </div>
       </div>
       <div className="border-b flex items-center justify-center">
-        <Link
-          href="/account/campaigns"
+        <button
+       
           className="w-full flex items-center justify-center p-4 hover:bg-gray-100 transition-colors duration-200 "
         >
-          <div className="text-red-600">
-            <IoHeartOutline />
+          <div className={`${isFavorite ? "text-green-500" : "text-red-400"} `}>
+            <IoHeartOutline onClick={() => dispatch(addFavourite(pokemon))} />
           </div>
           <div className="pl-3">
             <p className="text-sm font-medium text-gray-800 leading-none">
-              No es favorito
+              {isFavorite ? "Es favorito" : "No es favorito"}
             </p>
           </div>
-        </Link>
+        </button>
       </div>
     </div>
   );
